@@ -1,0 +1,28 @@
+meta {
+  name: signalfx
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://ingest.eu1.signalfx.com/v2/datapoint
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  X-SF-TOKEN: 7-DG6LOJOb2mrsaUGEjC5A
+}
+
+body:json {
+  {
+    "counter": [
+            {
+                "metric": "test.metric",
+                "dimensions": { "service": "server1" },
+                "value": 100
+            }
+        ]
+  }
+}
